@@ -66,4 +66,4 @@ MLP Accuracy: 0.83
 
 ## 📬 Contact
 
-For any questions, feel free to reach out at [your-email@example.com]
+For any questions, feel free to reach out at [sagarprem2006@gmail.com]
