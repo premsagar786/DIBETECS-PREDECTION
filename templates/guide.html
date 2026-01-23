@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Health Guide | Understanding Your Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2" />
+                    <path d="M20 10 L20 30 M10 20 L30 20" stroke="url(#gradient)" stroke-width="2"
+                        stroke-linecap="round" />
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea" />
+                            <stop offset="100%" style="stop-color:#764ba2" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>DiabetesAI</h1>
+            </div>
+            <nav>
+                <a href="/" class="nav-link">Predict</a>
+                <a href="/guide" class="nav-link active">Health Guide</a>
+                <a href="/info" class="nav-link">About Models</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="guide-section">
+                <div class="guide-hero">
+                    <h2 class="page-title">🏥 Diabetes Health Guide</h2>
+                    <p class="page-subtitle">Understanding diabetes criteria and what your measurements mean</p>
+                </div>
+
+                <!-- Quick Reference Card -->
+                <div class="quick-reference-card">
+                    <h3 class="section-title">
+                        <span class="title-icon">⚡</span>
+                        Quick Reference: Diabetes Diagnosis Criteria
+                    </h3>
+                    <div class="criteria-grid">
+                        <div class="criteria-card normal">
+                            <div class="criteria-header">
+                                <span class="criteria-icon">✅</span>
+                                <h4>Normal</h4>
+                            </div>
+                            <ul>
+                                <li><strong>Fasting Glucose:</strong> Less than 100 mg/dL</li>
+                                <li><strong>A1C:</strong> Below 5.7%</li>
+                                <li><strong>Random Glucose:</strong> Less than 140 mg/dL</li>
+                            </ul>
+                        </div>
+
+                        <div class="criteria-card prediabetes">
+                            <div class="criteria-header">
+                                <span class="criteria-icon">⚠️</span>
+                                <h4>Prediabetes</h4>
+                            </div>
+                            <ul>
+                                <li><strong>Fasting Glucose:</strong> 100-125 mg/dL</li>
+                                <li><strong>A1C:</strong> 5.7% to 6.4%</li>
+                                <li><strong>Random Glucose:</strong> 140-199 mg/dL</li>
+                            </ul>
+                        </div>
+
+                        <div class="criteria-card diabetes">
+                            <div class="criteria-header">
+                                <span class="criteria-icon">🔴</span>
+                                <h4>Diabetes</h4>
+                            </div>
+                            <ul>
+                                <li><strong>Fasting Glucose:</strong> 126 mg/dL or higher</li>
+                                <li><strong>A1C:</strong> 6.5% or higher</li>
+                                <li><strong>Random Glucose:</strong> 200 mg/dL or higher</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Feature Guide -->
+                <div class="features-guide">
+                    <h3 class="section-title">
+                        <span class="title-icon">📊</span>
+                        Understanding Each Measurement
+                    </h3>
+
+                    <!-- Glucose -->
+                    <div class="feature-guide-card">
+                        <div class="feature-header">
+                            <span class="feature-number">1</span>
+                            <h4>Blood Glucose (Sugar)</h4>
+                        </div>
+                        <div class="feature-content">
+                            <p class="feature-description">
+                                Blood glucose is the main sugar found in your blood. It comes from the food you eat
+                                and is your body's main source of energy.
+                            </p>
+                            <div class="feature-ranges">
+                                <div class="range-item">
+                                    <span class="range-label">Normal (Fasting):</span>
+                                    <span class="range-value normal-range">70-99 mg/dL</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Prediabetes:</span>
+                                    <span class="range-value warning-range">100-125 mg/dL</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Diabetes:</span>
+                                    <span class="range-value danger-range">≥126 mg/dL</span>
+                                </div>
+                            </div>
+                            <div class="feature-tips">
+                                <strong>💡 What affects it:</strong>
+                                <ul>
+                                    <li>Food intake (especially carbohydrates)</li>
+                                    <li>Physical activity</li>
+                                    <li>Stress levels</li>
+                                    <li>Medications</li>
+                                    <li>Illness or infection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blood Pressure -->
+                    <div class="feature-guide-card">
+                        <div class="feature-header">
+                            <span class="feature-number">2</span>
+                            <h4>Blood Pressure</h4>
+                        </div>
+                        <div class="feature-content">
+                            <p class="feature-description">
+                                Blood pressure measures the force of blood against artery walls. High blood pressure
+                                is common in people with diabetes and increases heart disease risk.
+                            </p>
+                            <div class="feature-ranges">
+                                <div class="range-item">
+                                    <span class="range-label">Normal:</span>
+                                    <span class="range-value normal-range">Less than 120/80 mm Hg</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Elevated:</span>
+                                    <span class="range-value warning-range">120-129/80 mm Hg</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">High (Hypertension):</span>
+                                    <span class="range-value danger-range">≥130/80 mm Hg</span>
+                                </div>
+                            </div>
+                            <div class="feature-tips">
+                                <strong>💡 How to maintain healthy BP:</strong>
+                                <ul>
+                                    <li>Reduce salt intake</li>
+                                    <li>Exercise regularly (30 min/day)</li>
+                                    <li>Maintain healthy weight</li>
+                                    <li>Limit alcohol consumption</li>
+                                    <li>Manage stress</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BMI -->
+                    <div class="feature-guide-card">
+                        <div class="feature-header">
+                            <span class="feature-number">3</span>
+                            <h4>Body Mass Index (BMI)</h4>
+                        </div>
+                        <div class="feature-content">
+                            <p class="feature-description">
+                                BMI is a measure of body fat based on height and weight. Higher BMI is associated
+                                with increased diabetes risk.
+                            </p>
+                            <div class="feature-ranges">
+                                <div class="range-item">
+                                    <span class="range-label">Underweight:</span>
+                                    <span class="range-value">Less than 18.5</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Normal:</span>
+                                    <span class="range-value normal-range">18.5-24.9</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Overweight:</span>
+                                    <span class="range-value warning-range">25-29.9</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Obese:</span>
+                                    <span class="range-value danger-range">≥30</span>
+                                </div>
+                            </div>
+                            <div class="bmi-calculator">
+                                <strong>📐 Calculate your BMI:</strong>
+                                <p class="formula">BMI = Weight (kg) ÷ [Height (m)]²</p>
+                                <p class="formula-example">Example: 70 kg ÷ (1.75 m)² = 22.9 (Normal)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insulin -->
+                    <div class="feature-guide-card">
+                        <div class="feature-header">
+                            <span class="feature-number">4</span>
+                            <h4>Insulin Levels</h4>
+                        </div>
+                        <div class="feature-content">
+                            <p class="feature-description">
+                                Insulin is a hormone that helps glucose enter cells for energy. In diabetes,
+                                the body doesn't make enough insulin or can't use it effectively.
+                            </p>
+                            <div class="feature-ranges">
+                                <div class="range-item">
+                                    <span class="range-label">Normal (Fasting):</span>
+                                    <span class="range-value normal-range">2.6-24.9 μU/mL</span>
+                                </div>
+                                <div class="range-item">
+                                    <span class="range-label">Insulin Resistance:</span>
+                                    <span class="range-value warning-range">Above 25 μU/mL</span>
+                                </div>
+                            </div>
+                            <div class="feature-tips">
+                                <strong>💡 Signs of insulin resistance:</strong>
+                                <ul>
+                                    <li>Increased hunger</li>
+                                    <li>Difficulty concentrating</li>
+                                    <li>Weight gain (especially belly fat)</li>
+                                    <li>Fatigue after meals</li>
+                                    <li>Dark skin patches (acanthosis nigricans)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age & Family History -->
+                    <div class="feature-guide-card">
+                        <div class="feature-header">
+                            <span class="feature-number">5</span>
+                            <h4>Age & Family History</h4>
+                        </div>
+                        <div class="feature-content">
+                            <p class="feature-description">
+                                Age and genetics play important roles in diabetes risk. The Diabetes Pedigree Function
+                                measures genetic influence based on family history.
+                            </p>
+                            <div class="risk-factors">
+                                <h5>🔴 High Risk Factors:</h5>
+                                <ul>
+                                    <li><strong>Age:</strong> Risk increases after 45 years</li>
+                                    <li><strong>Family History:</strong> Parent or sibling with diabetes</li>
+                                    <li><strong>Ethnicity:</strong> African American, Hispanic, Native American, Asian
+                                        American</li>
+                                    <li><strong>Previous Gestational Diabetes:</strong> During pregnancy</li>
+                                    <li><strong>PCOS:</strong> Polycystic ovary syndrome</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Signs -->
+                <div class="warning-signs-section">
+                    <h3 class="section-title">
+                        <span class="title-icon">🚨</span>
+                        Warning Signs of Diabetes
+                    </h3>
+                    <div class="warning-grid">
+                        <div class="warning-card">
+                            <span class="warning-icon">💧</span>
+                            <h4>Increased Thirst</h4>
+                            <p>Feeling unusually thirsty, even after drinking water</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">🚽</span>
+                            <h4>Frequent Urination</h4>
+                            <p>Needing to urinate more often, especially at night</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">😴</span>
+                            <h4>Extreme Fatigue</h4>
+                            <p>Feeling tired and weak despite adequate rest</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">👁️</span>
+                            <h4>Blurred Vision</h4>
+                            <p>Changes in vision or difficulty focusing</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">🍽️</span>
+                            <h4>Increased Hunger</h4>
+                            <p>Feeling hungry even after eating</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">⚖️</span>
+                            <h4>Unexplained Weight Loss</h4>
+                            <p>Losing weight without trying</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">🩹</span>
+                            <h4>Slow Healing</h4>
+                            <p>Cuts and bruises take longer to heal</p>
+                        </div>
+                        <div class="warning-card">
+                            <span class="warning-icon">🦶</span>
+                            <h4>Tingling/Numbness</h4>
+                            <p>In hands or feet (neuropathy)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prevention Tips -->
+                <div class="prevention-section">
+                    <h3 class="section-title">
+                        <span class="title-icon">🛡️</span>
+                        Prevention & Management Tips
+                    </h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-icon">🥗</div>
+                            <h4>Healthy Diet</h4>
+                            <ul>
+                                <li>Choose whole grains over refined</li>
+                                <li>Eat plenty of vegetables</li>
+                                <li>Limit sugary drinks and foods</li>
+                                <li>Control portion sizes</li>
+                                <li>Include lean proteins</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">🏃</div>
+                            <h4>Regular Exercise</h4>
+                            <ul>
+                                <li>At least 150 min/week moderate activity</li>
+                                <li>Mix cardio and strength training</li>
+                                <li>Take breaks from sitting</li>
+                                <li>Find activities you enjoy</li>
+                                <li>Start slowly and build up</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">⚖️</div>
+                            <h4>Weight Management</h4>
+                            <ul>
+                                <li>Aim for 5-10% weight loss if overweight</li>
+                                <li>Track your progress</li>
+                                <li>Set realistic goals</li>
+                                <li>Get support from family/friends</li>
+                                <li>Celebrate small victories</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">🩺</div>
+                            <h4>Regular Check-ups</h4>
+                            <ul>
+                                <li>Annual physical exams</li>
+                                <li>Blood sugar testing as recommended</li>
+                                <li>Eye exams yearly</li>
+                                <li>Foot checks regularly</li>
+                                <li>Monitor blood pressure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- When to See a Doctor -->
+                <div class="doctor-section">
+                    <h3 class="section-title">
+                        <span class="title-icon">👨‍⚕️</span>
+                        When to See a Doctor
+                    </h3>
+                    <div class="doctor-card">
+                        <div class="urgent-box">
+                            <h4>🚨 Seek Immediate Medical Attention If:</h4>
+                            <ul>
+                                <li>Blood sugar above 300 mg/dL</li>
+                                <li>Severe dehydration</li>
+                                <li>Difficulty breathing</li>
+                                <li>Confusion or loss of consciousness</li>
+                                <li>Fruity-smelling breath</li>
+                                <li>Severe abdominal pain</li>
+                            </ul>
+                        </div>
+                        <div class="routine-box">
+                            <h4>📅 Schedule an Appointment If:</h4>
+                            <ul>
+                                <li>You have multiple diabetes symptoms</li>
+                                <li>Family history of diabetes</li>
+                                <li>BMI over 25 with risk factors</li>
+                                <li>Age 45+ (for screening)</li>
+                                <li>Previous prediabetes diagnosis</li>
+                                <li>Gestational diabetes history</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h3>Ready to Check Your Risk?</h3>
+                    <p>Use our AI-powered prediction tool to assess your diabetes risk based on your health
+                        measurements.</p>
+                    <a href="/" class="btn btn-primary">
+                        <span>Start Prediction</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer">
+                    <strong>⚠️ Important Medical Disclaimer:</strong> This guide is for educational purposes only
+                    and should not replace professional medical advice. Always consult with qualified healthcare
+                    professionals for diagnosis, treatment, and medical guidance. If you have concerns about diabetes
+                    or any health condition, please see your doctor.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 DiabetesAI | Developed by Prem Sagar Malhotra</p>
+            <p class="footer-links">
+                <a href="mailto:sagarprem2006@gmail.com">Contact</a>
+                <a href="https://github.com/premsagar786" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/prem-sagar-malhotra-99428a348" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

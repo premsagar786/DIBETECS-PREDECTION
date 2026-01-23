@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Models | Diabetes Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2" />
+                    <path d="M20 10 L20 30 M10 20 L30 20" stroke="url(#gradient)" stroke-width="2"
+                        stroke-linecap="round" />
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea" />
+                            <stop offset="100%" style="stop-color:#764ba2" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>DiabetesAI</h1>
+            </div>
+            <nav>
+                <a href="/" class="nav-link">Predict</a>
+                <a href="/info" class="nav-link active">About Models</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="info-section">
+                <h2 class="page-title">Machine Learning Models</h2>
+                <p class="page-subtitle">Understanding the algorithms powering our predictions</p>
+
+                <div class="models-info-grid">
+                    <!-- KNN Model -->
+                    <div class="model-info-card">
+                        <div class="model-header">
+                            <span class="model-icon">🎯</span>
+                            <h3>K-Nearest Neighbors (KNN)</h3>
+                        </div>
+                        <p class="model-description">
+                            KNN is a simple, instance-based learning algorithm that classifies new data points
+                            based on the majority class of their k nearest neighbors in the feature space.
+                        </p>
+                        <div class="model-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li>Stores all training data points</li>
+                                <li>Finds k=9 closest neighbors to the new patient</li>
+                                <li>Predicts based on majority vote</li>
+                                <li>Uses Euclidean distance for similarity</li>
+                            </ul>
+                            <h4>Strengths:</h4>
+                            <ul>
+                                <li>✓ Simple and intuitive</li>
+                                <li>✓ No training phase required</li>
+                                <li>✓ Effective for non-linear patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Decision Tree Model -->
+                    <div class="model-info-card">
+                        <div class="model-header">
+                            <span class="model-icon">🌳</span>
+                            <h3>Decision Tree</h3>
+                        </div>
+                        <p class="model-description">
+                            A tree-like model that makes decisions by asking a series of questions about
+                            the features, creating a flowchart-like structure for classification.
+                        </p>
+                        <div class="model-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li>Splits data based on feature thresholds</li>
+                                <li>Creates branches for different outcomes</li>
+                                <li>Maximum depth of 3 levels for interpretability</li>
+                                <li>Uses Gini impurity for splitting</li>
+                            </ul>
+                            <h4>Strengths:</h4>
+                            <ul>
+                                <li>✓ Highly interpretable</li>
+                                <li>✓ Handles non-linear relationships</li>
+                                <li>✓ No data normalization needed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- MLP Model -->
+                    <div class="model-info-card">
+                        <div class="model-header">
+                            <span class="model-icon">🧠</span>
+                            <h3>Multi-Layer Perceptron (MLP)</h3>
+                        </div>
+                        <p class="model-description">
+                            A neural network with multiple layers that learns complex patterns through
+                            interconnected neurons, mimicking the human brain's structure.
+                        </p>
+                        <div class="model-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li>Input layer receives 8 features</li>
+                                <li>Hidden layers (100 → 50 neurons) process data</li>
+                                <li>Output layer predicts diabetes risk</li>
+                                <li>Uses backpropagation for learning</li>
+                            </ul>
+                            <h4>Strengths:</h4>
+                            <ul>
+                                <li>✓ Captures complex patterns</li>
+                                <li>✓ High accuracy potential</li>
+                                <li>✓ Adaptable to various problems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ensemble Method -->
+                    <div class="model-info-card ensemble-card">
+                        <div class="model-header">
+                            <span class="model-icon">⚡</span>
+                            <h3>Ensemble Prediction</h3>
+                        </div>
+                        <p class="model-description">
+                            Combines predictions from all three models using majority voting to provide
+                            a more robust and reliable final prediction.
+                        </p>
+                        <div class="model-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li>Collects predictions from all models</li>
+                                <li>Uses majority voting (2 out of 3)</li>
+                                <li>Reduces individual model bias</li>
+                                <li>Improves overall accuracy</li>
+                            </ul>
+                            <h4>Benefits:</h4>
+                            <ul>
+                                <li>✓ More reliable predictions</li>
+                                <li>✓ Reduces overfitting</li>
+                                <li>✓ Leverages multiple perspectives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dataset Information -->
+                <div class="dataset-info">
+                    <h2 class="section-title">
+                        <span class="title-icon">📊</span>
+                        About the Dataset
+                    </h2>
+                    <div class="dataset-card">
+                        <h3>Pima Indians Diabetes Database</h3>
+                        <p>
+                            This dataset is originally from the National Institute of Diabetes and Digestive
+                            and Kidney Diseases. The objective is to diagnostically predict whether a patient
+                            has diabetes based on certain diagnostic measurements.
+                        </p>
+                        <div class="dataset-features">
+                            <h4>Features (8):</h4>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <strong>Pregnancies:</strong> Number of times pregnant
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Glucose:</strong> Plasma glucose concentration
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Blood Pressure:</strong> Diastolic blood pressure (mm Hg)
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Skin Thickness:</strong> Triceps skin fold thickness (mm)
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Insulin:</strong> 2-Hour serum insulin (μU/mL)
+                                </div>
+                                <div class="feature-item">
+                                    <strong>BMI:</strong> Body mass index (weight in kg/(height in m)²)
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Diabetes Pedigree:</strong> Diabetes pedigree function
+                                </div>
+                                <div class="feature-item">
+                                    <strong>Age:</strong> Age in years
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dataset-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">768</span>
+                                <span class="stat-label">Total Samples</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Features</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Classes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <a href="/" class="btn btn-primary">
+                        <span>Try the Prediction Tool</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 DiabetesAI | Developed by Prem Sagar Malhotra</p>
+            <p class="footer-links">
+                <a href="mailto:sagarprem2006@gmail.com">Contact</a>
+                <a href="https://github.com/premsagar786" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/prem-sagar-malhotra-99428a348" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
